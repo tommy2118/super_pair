@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Pair Programming - Common Pitfalls</title>
+    <meta name="description" content="Learn about common mistakes to avoid when pair programming with AI">
+    <!-- External CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Internal CSS -->
+    <link href="../css/main.css" rel="stylesheet" />
+    <link href="../css/animations.css" rel="stylesheet" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="text-xl font-bold text-gray-800 flex items-center">
+                <a href="../index.html" class="flex items-center hover:opacity-75 transition-opacity">
+                    <i class="fas fa-robot mr-2 text-blue-600"></i>
+                    <span class="gradient-text">AI Pair Programming</span>
+                </a>
+            </div>
+            <div class="flex items-center space-x-6">
+                <button id="prevSlide" class="nav-button">
+                    <i class="fas fa-arrow-left text-gray-600"></i>
+                </button>
+                <span id="slideCounter" class="font-medium text-gray-600 min-w-[48px] text-center">7/8</span>
+                <button id="nextSlide" class="nav-button pulse">
+                    <i class="fas fa-arrow-right text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Progress Bar -->
+        <div class="w-full h-1 bg-gray-100">
+            <div id="progressBar" class="progress-bar h-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 pt-28 pb-16">
+        <div class="max-w-4xl mx-auto">
+            <!-- Title Section -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4 gradient-text">
+                    Common Pitfalls
+                </h1>
+                <p class="text-xl text-gray-600">
+                    Mistakes to avoid when working with your AI pair
+                </p>
+            </div>
+
+            <!-- Major Pitfalls -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Blind Trust -->
+                <div class="card p-6 border-l-4 border-red-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-exclamation-triangle text-red-500"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Blind Trust</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Accepting AI suggestions without review or understanding
+                    </p>
+                    <div class="bg-red-50 p-4 rounded-lg mb-4">
+                        <p class="text-sm text-red-700 font-medium">What goes wrong:</p>
+                        <ul class="mt-2 space-y-2 text-sm text-red-600">
+                            <li>• Security vulnerabilities</li>
+                            <li>• Performance issues</li>
+                            <li>• Maintainability problems</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <p class="text-sm text-green-700 font-medium">Do this instead:</p>
+                        <ul class="mt-2 space-y-2 text-sm text-green-600">
+                            <li>• Review all code thoroughly</li>
+                            <li>• Ask for explanations</li>
+                            <li>• Verify security practices</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Vague Requests -->
+                <div class="card p-6 border-l-4 border-red-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-question-circle text-red-500"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Vague Requests</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Not providing enough context or specific requirements
+                    </p>
+                    <div class="bg-red-50 p-4 rounded-lg mb-4">
+                        <p class="text-sm text-red-700 font-medium">What goes wrong:</p>
+                        <ul class="mt-2 space-y-2 text-sm text-red-600">
+                            <li>• Misaligned solutions</li>
+                            <li>• Wasted iterations</li>
+                            <li>• Incomplete features</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <p class="text-sm text-green-700 font-medium">Do this instead:</p>
+                        <ul class="mt-2 space-y-2 text-sm text-green-600">
+                            <li>• Be specific about needs</li>
+                            <li>• Provide context</li>
+                            <li>• Share constraints</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More Pitfalls -->
+            <div class="card p-8 mb-12">
+                <h2 class="text-2xl font-semibold mb-6">Additional Pitfalls to Watch For</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Overreliance -->
+                    <div class="p-4 bg-gray-50 rounded-lg">
+                        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-robot text-orange-600"></i>
+                        </div>
+                        <h3 class="font-medium mb-2">Overreliance</h3>
+                        <p class="text-sm text-gray-600">
+                            Using AI for everything without developing your own expertise
+                        </p>
+                        <div class="mt-4">
+                            <p class="text-sm font-medium text-gray-700">Solution:</p>
+                            <p class="text-sm text-gray-600">Use AI as a tool to enhance your skills, not replace them</p>
+                        </div>
+                    </div>
+
+                    <!-- Not Verifying -->
+                    <div class="p-4 bg-gray-50 rounded-lg">
+                        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-bug text-orange-600"></i>
+                        </div>
+                        <h3 class="font-medium mb-2">Not Testing</h3>
+                        <p class="text-sm text-gray-600">
+                            Implementing AI suggestions without proper testing
+                        </p>
+                        <div class="mt-4">
+                            <p class="text-sm font-medium text-gray-700">Solution:</p>
+                            <p class="text-sm text-gray-600">Always test code thoroughly before committing</p>
+                        </div>
+                    </div>
+
+                    <!-- Wrong Tool -->
+                    <div class="p-4 bg-gray-50 rounded-lg">
+                        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-tools text-orange-600"></i>
+                        </div>
+                        <h3 class="font-medium mb-2">Wrong Tool</h3>
+                        <p class="text-sm text-gray-600">
+                            Using AI for tasks better handled by other tools
+                        </p>
+                        <div class="mt-4">
+                            <p class="text-sm font-medium text-gray-700">Solution:</p>
+                            <p class="text-sm text-gray-600">Choose the right tool for each task</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Examples Table -->
+            <div class="card p-8 mb-12">
+                <h2 class="text-2xl font-semibold mb-6">Common Scenarios to Avoid</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-gray-200">
+                                <th class="text-left py-4 px-4 text-gray-600">Instead of This</th>
+                                <th class="text-left py-4 px-4 text-gray-600">Do This</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr>
+                                <td class="py-4 px-4">
+                                    <div class="text-red-600">"Fix this code"</div>
+                                    <div class="text-sm text-gray-500">No context or error details</div>
+                                </td>
+                                <td class="py-4 px-4">
+                                    <div class="text-green-600">"Getting NameError in user_controller.rb, line 45"</div>
+                                    <div class="text-sm text-gray-500">Specific error and location</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-4">
+                                    <div class="text-red-600">"Is this code good?"</div>
+                                    <div class="text-sm text-gray-500">Vague quality check</div>
+                                </td>
+                                <td class="py-4 px-4">
+                                    <div class="text-green-600">"Review this code for security issues and performance"</div>
+                                    <div class="text-sm text-gray-500">Specific review criteria</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-4">
+                                    <div class="text-red-600">Copying code without testing</div>
+                                    <div class="text-sm text-gray-500">Direct implementation</div>
+                                </td>
+                                <td class="py-4 px-4">
+                                    <div class="text-green-600">Write tests, then implement</div>
+                                    <div class="text-sm text-gray-500">Test-driven development</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Key Takeaways -->
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-lightbulb text-blue-500"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-blue-700 font-medium">Remember</p>
+                        <ul class="mt-2 space-y-2 text-blue-600">
+                            <li>• AI is a tool, not a replacement for expertise</li>
+                            <li>• Always review and test generated code</li>
+                            <li>• Be specific in your requests</li>
+                            <li>• Maintain good development practices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="../js/navigation.js"></script>
+</body>
+</html>

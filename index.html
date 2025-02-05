@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Pair Programming - Training Guide</title>
+    <meta name="description" content="Training guide for effective AI pair programming practices">
+    <!-- External CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Internal CSS -->
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/animations.css" rel="stylesheet" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="text-xl font-bold text-gray-800 flex items-center">
+                <a href="index.html" class="flex items-center hover:opacity-75 transition-opacity">
+                    <i class="fas fa-robot mr-2 text-blue-600"></i>
+                    <span class="gradient-text">AI Pair Programming</span>
+                </a>
+            </div>
+            <div class="flex items-center space-x-6">
+                <button id="nextSlide" class="primary-button flex items-center space-x-2 pulse">
+                    <span>Start Learning</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 pt-28 pb-16">
+        <div class="max-w-4xl mx-auto">
+            <!-- Introduction Section -->
+            <div class="text-center mb-16">
+                <h1 class="text-5xl font-bold mb-6 gradient-text">
+                    AI-Enhanced Programming
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                    A practical guide to effective collaboration with AI tools in your development workflow.
+                </p>
+            </div>
+
+            <!-- Core Concepts -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="card p-6">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-robot text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">AI as Your Partner</h3>
+                    <p class="text-gray-600 text-sm">
+                        Understanding the AI pair programming relationship and your role as the expert.
+                    </p>
+                </div>
+                <div class="card p-6">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-comments text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Clear Communication</h3>
+                    <p class="text-gray-600 text-sm">
+                        Build and maintain effective context for better AI collaboration.
+                    </p>
+                </div>
+                <div class="card p-6">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-check-circle text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Best Practices</h3>
+                    <p class="text-gray-600 text-sm">
+                        Learn practical techniques and avoid common pitfalls.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Course Outline -->
+            <div class="card p-8 mb-16">
+                <h2 class="text-2xl font-semibold mb-6">What You'll Learn</h2>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="text-blue-600 font-medium">1</span>
+                        </div>
+                        <div>
+                            <h3 class="font-medium mb-1">The Foundation</h3>
+                            <p class="text-gray-600 text-sm">Your role as the expert developer</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="text-blue-600 font-medium">2</span>
+                        </div>
+                        <div>
+                            <h3 class="font-medium mb-1">Building Context</h3>
+                            <p class="text-gray-600 text-sm">How to communicate effectively with AI</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="text-blue-600 font-medium">3</span>
+                        </div>
+                        <div>
+                            <h3 class="font-medium mb-1">Using AI Projects</h3>
+                            <p class="text-gray-600 text-sm">Leveraging ChatGPT and Claude project features</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="text-blue-600 font-medium">4</span>
+                        </div>
+                        <div>
+                            <h3 class="font-medium mb-1">Technical Context</h3>
+                            <p class="text-gray-600 text-sm">Sharing code and technical requirements</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="text-blue-600 font-medium">5</span>
+                        </div>
+                        <div>
+                            <h3 class="font-medium mb-1">Maintaining Context</h3>
+                            <p class="text-gray-600 text-sm">Keeping effective collaboration over time</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="text-blue-600 font-medium">6</span>
+                        </div>
+                        <div>
+                            <h3 class="font-medium mb-1">Common Pitfalls</h3>
+                            <p class="text-gray-600 text-sm">Mistakes to avoid and how to handle them</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools We'll Cover -->
+            <div class="bg-white/50 rounded-xl p-8">
+                <h2 class="text-2xl font-semibold mb-6">Tools We'll Cover</h2>
+                <div class="flex items-center justify-center space-x-8">
+                    <div class="flex items-center">
+                        <i class="fas fa-keyboard text-3xl text-blue-600 mr-3"></i>
+                        <span class="font-medium">ChatGPT</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-brain text-3xl text-purple-600 mr-3"></i>
+                        <span class="font-medium">Claude</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-code text-3xl text-green-600 mr-3"></i>
+                        <span class="font-medium">GitHub Copilot</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/navigation.js"></script>
+    <script>
+        // Add click handler for all navigation buttons
+        document.getElementById('nextSlide')?.addEventListener('click', () => {
+            window.location.href = 'slides/tools.html';
+        });
+    </script>
+</body>
+</html>

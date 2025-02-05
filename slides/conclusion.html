@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Pair Programming - Next Steps</title>
+    <meta name="description" content="Get started with AI pair programming">
+    <!-- External CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Internal CSS -->
+    <link href="../css/main.css" rel="stylesheet" />
+    <link href="../css/animations.css" rel="stylesheet" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="text-xl font-bold text-gray-800 flex items-center">
+                <a href="../index.html" class="flex items-center hover:opacity-75 transition-opacity">
+                    <i class="fas fa-robot mr-2 text-blue-600"></i>
+                    <span class="gradient-text">AI Pair Programming</span>
+                </a>
+            </div>
+            <div class="flex items-center space-x-6">
+                <button id="prevSlide" class="nav-button">
+                    <i class="fas fa-arrow-left text-gray-600"></i>
+                </button>
+                <span id="slideCounter" class="font-medium text-gray-600 min-w-[48px] text-center">8/8</span>
+                <button id="nextSlide" class="nav-button pulse">
+                    <i class="fas fa-arrow-right text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Progress Bar -->
+        <div class="w-full h-1 bg-gray-100">
+            <div id="progressBar" class="progress-bar h-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 pt-28 pb-16">
+        <div class="max-w-4xl mx-auto">
+            <!-- Title Section -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4 gradient-text">
+                    Getting Started
+                </h1>
+                <p class="text-xl text-gray-600">
+                    Your next steps for effective AI pair programming
+                </p>
+            </div>
+
+            <!-- Key Learnings -->
+            <div class="card p-8 mb-12">
+                <h2 class="text-2xl font-semibold mb-6">What We've Learned</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-check text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">Foundation</h3>
+                                <p class="text-sm text-gray-600">You are the expert - AI is your tool</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-check text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">Context Building</h3>
+                                <p class="text-sm text-gray-600">Clear communication gets better results</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-check text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">Projects</h3>
+                                <p class="text-sm text-gray-600">Organize work for better continuity</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-check text-red-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">Pitfalls</h3>
+                                <p class="text-sm text-gray-600">Common mistakes to avoid</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Getting Started -->
+            <div class="card p-8 mb-12">
+                <h2 class="text-2xl font-semibold mb-6">First Tasks to Try</h2>
+                <div class="space-y-6">
+                    <!-- Task 1 -->
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-medium mb-4 flex items-center">
+                            <i class="fas fa-1 text-blue-600 mr-2"></i>
+                            Code Review
+                        </h3>
+                        <pre class="text-sm text-gray-700 bg-white p-4 rounded border border-gray-200 mb-4">
+"I'd like you to review this code for:
+- Performance issues
+- Security concerns
+- Best practices
+
+[paste your code]"</pre>
+                        <p class="text-sm text-gray-600">
+                            Start with code review to get comfortable with AI feedback
+                        </p>
+                    </div>
+
+                    <!-- Task 2 -->
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-medium mb-4 flex items-center">
+                            <i class="fas fa-2 text-purple-600 mr-2"></i>
+                            Test Writing
+                        </h3>
+                        <pre class="text-sm text-gray-700 bg-white p-4 rounded border border-gray-200 mb-4">
+"Help me write tests for this model:
+- Include happy path
+- Edge cases
+- Error conditions
+
+[paste your model code]"</pre>
+                        <p class="text-sm text-gray-600">
+                            Test writing is a great way to practice providing context
+                        </p>
+                    </div>
+
+                    <!-- Task 3 -->
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-medium mb-4 flex items-center">
+                            <i class="fas fa-3 text-green-600 mr-2"></i>
+                            Feature Planning
+                        </h3>
+                        <pre class="text-sm text-gray-700 bg-white p-4 rounded border border-gray-200 mb-4">
+"Let's plan the implementation of:
+- User authentication
+- Required features
+- Security considerations
+- Testing strategy"</pre>
+                        <p class="text-sm text-gray-600">
+                            Practice breaking down complex features with AI assistance
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resources -->
+            <div class="card p-8 mb-12">
+                <h2 class="text-2xl font-semibold mb-6">Useful Resources</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-4 bg-blue-50 rounded-lg">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-book text-blue-600"></i>
+                        </div>
+                        <h3 class="font-medium mb-2">Documentation</h3>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>• Claude documentation</li>
+                            <li>• ChatGPT guides</li>
+                            <li>• Best practices</li>
+                        </ul>
+                    </div>
+                    <div class="p-4 bg-purple-50 rounded-lg">
+                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-users text-purple-600"></i>
+                        </div>
+                        <h3 class="font-medium mb-2">Community</h3>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>• Internal wiki</li>
+                            <li>• Team examples</li>
+                            <li>• Success stories</li>
+                        </ul>
+                    </div>
+                    <div class="p-4 bg-green-50 rounded-lg">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-hands-helping text-green-600"></i>
+                        </div>
+                        <h3 class="font-medium mb-2">Support</h3>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>• Team channels</li>
+                            <li>• Office hours</li>
+                            <li>• Learning sessions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Tips -->
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-lightbulb text-blue-500"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-blue-700 font-medium">Remember</p>
+                        <ul class="mt-2 space-y-2 text-blue-600">
+                            <li>• Start small and build up</li>
+                            <li>• Practice clear communication</li>
+                            <li>• Share your learnings with the team</li>
+                            <li>• Keep refining your approach</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="../js/navigation.js"></script>
+</body>
+</html>

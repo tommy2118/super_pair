@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Pair Programming - Tools Overview</title>
+    <meta name="description" content="Comparing AI programming tools">
+    <!-- External CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Internal CSS -->
+    <link href="../css/main.css" rel="stylesheet" />
+    <link href="../css/animations.css" rel="stylesheet" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="text-xl font-bold text-gray-800 flex items-center">
+                <a href="../index.html" class="flex items-center hover:opacity-75 transition-opacity">
+                    <i class="fas fa-robot mr-2 text-blue-600"></i>
+                    <span class="gradient-text">AI Pair Programming</span>
+                </a>
+            </div>
+            <div class="flex items-center space-x-6">
+                <button id="prevSlide" class="nav-button">
+                    <i class="fas fa-arrow-left text-gray-600"></i>
+                </button>
+                <span id="slideCounter" class="font-medium text-gray-600 min-w-[48px] text-center">2/9</span>
+                <button id="nextSlide" class="nav-button pulse">
+                    <i class="fas fa-arrow-right text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Progress Bar -->
+        <div class="w-full h-1 bg-gray-100">
+            <div id="progressBar" class="progress-bar h-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 pt-28 pb-16">
+        <div class="max-w-4xl mx-auto">
+            <!-- Title Section -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4 gradient-text">
+                    Choosing the Right Tool
+                </h1>
+                <p class="text-xl text-gray-600">
+                    Understanding the strengths and capabilities of each AI assistant
+                </p>
+            </div>
+
+            <!-- Tool Comparison -->
+            <div class="card p-8 mb-12">
+                <h2 class="text-2xl font-semibold mb-6">Tools at a Glance</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-gray-200">
+                                <th class="text-left py-4 px-4 text-gray-600 w-1/4"></th>
+                                <th class="text-left py-4 px-4 text-gray-600 w-1/4">ChatGPT</th>
+                                <th class="text-left py-4 px-4 text-gray-600 w-1/4">Claude</th>
+                                <th class="text-left py-4 px-4 text-gray-600 w-1/4">GitHub Copilot</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr>
+                                <td class="py-4 px-4 font-medium">Best For</td>
+                                <td class="py-4 px-4">Code explanations, debugging, boilerplate generation</td>
+                                <td class="py-4 px-4">Complex analysis, architecture discussions, documentation</td>
+                                <td class="py-4 px-4">Real-time coding suggestions, API usage, patterns</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-4 font-medium">Interface</td>
+                                <td class="py-4 px-4">Chat with code blocks, projects</td>
+                                <td class="py-4 px-4">Chat with code blocks, file analysis</td>
+                                <td class="py-4 px-4">In-editor suggestions</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-4 font-medium">Context Handling</td>
+                                <td class="py-4 px-4">Project-based chat history</td>
+                                <td class="py-4 px-4">Multi-file analysis, longer context</td>
+                                <td class="py-4 px-4">Real-time file context</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- When to Use Each -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- ChatGPT -->
+                <div class="card p-6">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-keyboard text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-4">ChatGPT</h3>
+                    <h4 class="font-medium text-gray-700 mb-2">Best Scenarios:</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Code review and improvements</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Learning new concepts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Quick prototypes</span>
+                        </li>
+                    </ul>
+                    <h4 class="font-medium text-gray-700 mt-4 mb-2">Limitations:</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
+                            <span>May struggle with large codebases</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
+                            <span>Knowledge cutoff date</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Claude -->
+                <div class="card p-6">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-brain text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-4">Claude</h3>
+                    <h4 class="font-medium text-gray-700 mb-2">Best Scenarios:</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Complex analysis tasks</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Multi-file projects</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Technical writing</span>
+                        </li>
+                    </ul>
+                    <h4 class="font-medium text-gray-700 mt-4 mb-2">Limitations:</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
+                            <span>Interaction limited to chat</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
+                            <span>No direct code execution</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- GitHub Copilot -->
+                <div class="card p-6">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-code text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-4">GitHub Copilot</h3>
+                    <h4 class="font-medium text-gray-700 mb-2">Best Scenarios:</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Active coding sessions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>API usage patterns</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Repetitive code tasks</span>
+                        </li>
+                    </ul>
+                    <h4 class="font-medium text-gray-700 mt-4 mb-2">Limitations:</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
+                            <span>No complex discussions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
+                            <span>Limited to code completion</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Using Together -->
+            <div class="card p-8">
+                <h2 class="text-2xl font-semibold mb-6">Using Tools Together</h2>
+                <div class="space-y-4">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h3 class="font-medium mb-2">Common Workflow:</h3>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                            <li>Discuss architecture with Claude</li>
+                            <li>Generate boilerplate with ChatGPT</li>
+                            <li>Active coding with GitHub Copilot</li>
+                            <li>Code review with Claude or ChatGPT</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="../js/navigation.js"></script>
+</body>
+</html>

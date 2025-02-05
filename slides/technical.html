@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Pair Programming - Technical Context</title>
+    <meta name="description" content="Learn how to communicate Ruby and Rails technical requirements effectively to AI">
+    <!-- External CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Internal CSS -->
+    <link href="../css/main.css" rel="stylesheet" />
+    <link href="../css/animations.css" rel="stylesheet" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="text-xl font-bold text-gray-800 flex items-center">
+                <a href="../index.html" class="flex items-center hover:opacity-75 transition-opacity">
+                    <i class="fas fa-robot mr-2 text-blue-600"></i>
+                    <span class="gradient-text">AI Pair Programming</span>
+                </a>
+            </div>
+            <div class="flex items-center space-x-6">
+                <button id="prevSlide" class="nav-button">
+                    <i class="fas fa-arrow-left text-gray-600"></i>
+                </button>
+                <span id="slideCounter" class="font-medium text-gray-600 min-w-[48px] text-center">5/8</span>
+                <button id="nextSlide" class="nav-button pulse">
+                    <i class="fas fa-arrow-right text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Progress Bar -->
+        <div class="w-full h-1 bg-gray-100">
+            <div id="progressBar" class="progress-bar h-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 pt-28 pb-16">
+        <div class="max-w-4xl mx-auto">
+            <!-- Title Section -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4 gradient-text">
+                    Technical Integration
+                </h1>
+                <p class="text-xl text-gray-600">
+                    Communicating Ruby and Rails requirements effectively
+                </p>
+            </div>
+
+            <!-- Technical Context Framework -->
+            <div class="card p-8 mb-12">
+                <h2 class="text-2xl font-semibold mb-6">Technical Context Framework</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Code Snippets Example -->
+                    <div>
+                        <h3 class="text-lg font-medium mb-4 flex items-center">
+                            <i class="fas fa-code text-blue-600 mr-2"></i>
+                            Current Implementation
+                        </h3>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <pre class="text-sm text-gray-700">
+# app/models/user.rb
+class User < ApplicationRecord
+  include Roleable
+
+  has_many :posts
+  has_many :comments
+
+  # TODO: Implement role-based permissions
+  def can_moderate?(resource)
+    # Implementation needed
+  end
+end
+
+# app/controllers/concerns/authorization.rb
+module Authorization
+  extend ActiveSupport::Concern
+
+  included do
+    before_action :verify_permissions
+  end
+
+  private
+
+  def verify_permissions
+    # TODO: Add RBAC logic
+  end
+end</pre>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-2">
+                            ↑ Share relevant model and controller code for context
+                        </p>
+                    </div>
+
+                    <!-- Technical Requirements -->
+                    <div>
+                        <h3 class="text-lg font-medium mb-4 flex items-center">
+                            <i class="fas fa-list-check text-purple-600 mr-2"></i>
+                            Project Configuration
+                        </h3>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <pre class="text-sm text-gray-700">
+# Gemfile
+ruby "3.2.2"
+gem "rails", "~> 7.1.0"
+gem "pg", "~> 1.1"
+gem "redis", "~> 5.0"
+gem "pundit", "~> 2.3"
+gem "sidekiq", "~> 7.0"
+
+# config/database.yml
+# PostgreSQL with uuid primary keys
+# Redis for caching
+# RSpec for testing
+
+# Requirements:
+- 90% test coverage
+- < 200ms response time
+- Sidekiq for background jobs
+- Redis-based caching
+- JSONAPI compliance</pre>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-2">
+                            ↑ Define tech stack and requirements clearly
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Implementation Patterns -->
+            <div class="card p-8 mb-12">
+                <h2 class="text-2xl font-semibold mb-6">Rails Implementation Patterns</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-4 bg-blue-50 rounded-lg">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-code-branch text-blue-600"></i>
+                        </div>
+                        <h3 class="font-medium mb-2">Code Organization</h3>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>• Service objects pattern</li>
+                            <li>• Concerns for shared logic</li>
+                            <li>• Form objects for complex forms</li>
+                        </ul>
+                    </div>
+                    <div class="p-4 bg-purple-50 rounded-lg">
+                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-puzzle-piece text-purple-600"></i>
+                        </div>
+                        <h3 class="font-medium mb-2">Best Practices</h3>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>• RuboCop configuration</li>
+                            <li>• Standard Ruby style guide</li>
+                            <li>• Rails conventions</li>
+                        </ul>
+                    </div>
+                    <div class="p-4 bg-green-50 rounded-lg">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-vial text-green-600"></i>
+                        </div>
+                        <h3 class="font-medium mb-2">Testing</h3>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>• RSpec with FactoryBot</li>
+                            <li>• SimpleCov for coverage</li>
+                            <li>• Capybara for features</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real-World Example -->
+            <div class="card p-8 mb-12">
+                <h2 class="text-2xl font-semibold mb-6">Example: Authorization Implementation</h2>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <pre class="text-sm text-gray-700 whitespace-pre-wrap">
+"I'm working on a Rails 7.1 API application and need help implementing
+role-based authorization. Here's our context:
+
+Stack:
+- Ruby 3.2.2
+- Rails 7.1.0
+- PostgreSQL with uuid primary keys
+- Redis for caching
+- Pundit for authorization
+- RSpec for testing
+
+Current Implementation: [paste model/concern code above]
+
+Requirements:
+1. Use Pundit policies
+2. Support role inheritance (admin > moderator > user)
+3. Cache permissions in Redis (5min TTL)
+4. Background job for permission updates
+5. Full test coverage
+
+Please help design the authorization system following Rails conventions."</pre>
+                </div>
+            </div>
+
+            <!-- Best Practices -->
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-lightbulb text-blue-500"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-blue-700 font-medium">Ruby/Rails Context Tips</p>
+                        <ul class="mt-2 space-y-2 text-blue-600">
+                            <li>• Specify Ruby and Rails versions</li>
+                            <li>• Share Gemfile dependencies</li>
+                            <li>• Include database schema context</li>
+                            <li>• Reference specific Rails patterns</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="../js/navigation.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Pair Programming - Using Projects</title>
+    <meta name="description" content="Learn how to use Claude and ChatGPT Projects effectively">
+    <!-- External CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Internal CSS -->
+    <link href="../css/main.css" rel="stylesheet" />
+    <link href="../css/animations.css" rel="stylesheet" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="text-xl font-bold text-gray-800 flex items-center">
+                <a href="../index.html" class="flex items-center hover:opacity-75 transition-opacity">
+                    <i class="fas fa-robot mr-2 text-blue-600"></i>
+                    <span class="gradient-text">AI Pair Programming</span>
+                </a>
+            </div>
+            <div class="flex items-center space-x-6">
+                <button id="prevSlide" class="nav-button">
+                    <i class="fas fa-arrow-left text-gray-600"></i>
+                </button>
+                <span id="slideCounter" class="font-medium text-gray-600 min-w-[48px] text-center">4/8</span>
+                <button id="nextSlide" class="nav-button pulse">
+                    <i class="fas fa-arrow-right text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Progress Bar -->
+        <div class="w-full h-1 bg-gray-100">
+            <div id="progressBar" class="progress-bar h-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 pt-28 pb-16">
+        <div class="max-w-4xl mx-auto">
+            <!-- Title Section -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4 gradient-text">
+                    Using AI Projects Effectively
+                </h1>
+                <p class="text-xl text-gray-600">
+                    How to leverage Projects in Claude and ChatGPT for ongoing development
+                </p>
+            </div>
+
+            <!-- Projects Overview -->
+            <div class="card p-8 mb-12">
+                <h2 class="text-2xl font-semibold mb-6">AI Project Features</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- ChatGPT Projects -->
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-keyboard text-blue-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-semibold">ChatGPT</h3>
+                        </div>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Project-specific chat history</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Custom project names and organization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>File and image sharing within projects</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Conversation branching</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Claude Projects -->
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-brain text-purple-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-semibold">Claude</h3>
+                        </div>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Persistent conversation context</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>File upload and analysis</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Project organization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Multi-file context</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best Practices -->
+            <div class="card p-8 mb-12">
+                <h2 class="text-2xl font-semibold mb-6">Using Projects Effectively</h2>
+
+                <div class="space-y-6">
+                    <!-- Project Organization -->
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-medium mb-4 flex items-center">
+                            <i class="fas fa-folder-tree text-blue-600 mr-2"></i>
+                            Project Organization
+                        </h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <div>
+                                    <strong>Create Feature-Specific Projects:</strong>
+                                    <p class="text-sm">Example: "User Authentication Implementation" or "Shopping Cart Development"</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <div>
+                                    <strong>Include Key Files:</strong>
+                                    <p class="text-sm">Upload relevant models, controllers, and test files at the start</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Starting New Projects -->
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-medium mb-4 flex items-center">
+                            <i class="fas fa-play text-green-600 mr-2"></i>
+                            Starting New Projects
+                        </h3>
+                        <pre class="text-sm text-gray-700 bg-white p-4 rounded border border-gray-200 mb-4">
+"Starting new project: Cart Implementation
+- Rails 7.1 e-commerce app
+- Using Stripe for payments
+- Need inventory tracking
+- Files uploaded:
+  - cart.rb
+  - cart_controller.rb
+  - cart_spec.rb
+
+First task: Design cart model structure"</pre>
+                    </div>
+
+                    <!-- Continuing Work -->
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-medium mb-4 flex items-center">
+                            <i class="fas fa-forward text-purple-600 mr-2"></i>
+                            Continuing Work
+                        </h3>
+                        <pre class="text-sm text-gray-700 bg-white p-4 rounded border border-gray-200 mb-4">
+"Continuing cart implementation:
+- Basic model structure complete
+- Added inventory validation
+- New task: Add checkout process
+- Updated code: [paste new changes]
+
+Need help with: Stripe integration"</pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pro Tips -->
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-lightbulb text-blue-500"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-blue-700 font-medium">Project Tips</p>
+                        <ul class="mt-2 space-y-2 text-blue-600">
+                            <li>• Create separate projects for major features</li>
+                            <li>• Upload relevant files at the start</li>
+                            <li>• Reference previous decisions when continuing work</li>
+                            <li>• Use clear project names for easy reference</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="../js/navigation.js"></script>
+</body>
+</html>

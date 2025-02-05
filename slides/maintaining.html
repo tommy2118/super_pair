@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Pair Programming - Maintaining Context</title>
+    <meta name="description" content="Learn how to maintain effective context during AI pair programming sessions">
+    <!-- External CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Internal CSS -->
+    <link href="../css/main.css" rel="stylesheet" />
+    <link href="../css/animations.css" rel="stylesheet" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="text-xl font-bold text-gray-800 flex items-center">
+                <a href="../index.html" class="flex items-center hover:opacity-75 transition-opacity">
+                    <i class="fas fa-robot mr-2 text-blue-600"></i>
+                    <span class="gradient-text">AI Pair Programming</span>
+                </a>
+            </div>
+            <div class="flex items-center space-x-6">
+                <button id="prevSlide" class="nav-button">
+                    <i class="fas fa-arrow-left text-gray-600"></i>
+                </button>
+                <span id="slideCounter" class="font-medium text-gray-600 min-w-[48px] text-center">6/8</span>
+                <button id="nextSlide" class="nav-button pulse">
+                    <i class="fas fa-arrow-right text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Progress Bar -->
+        <div class="w-full h-1 bg-gray-100">
+            <div id="progressBar" class="progress-bar h-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 pt-28 pb-16">
+        <div class="max-w-4xl mx-auto">
+            <!-- Title Section -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4 gradient-text">
+                    Maintaining AI Context
+                </h1>
+                <p class="text-xl text-gray-600">
+                    Keep your AI pair in sync during development sessions
+                </p>
+            </div>
+
+            <!-- Long Session Strategy -->
+            <div class="card p-8 mb-12">
+                <h2 class="text-2xl font-semibold mb-6">During Long Sessions</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Continuous Updates -->
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-medium mb-4 flex items-center">
+                            <i class="fas fa-sync-alt text-blue-600 mr-2"></i>
+                            Keep Your AI Partner Updated
+                        </h3>
+                        <pre class="text-sm text-gray-700 mb-4">
+"I've just implemented the user model. Now
+I'm going to add the authentication logic.
+Here's what I changed:
+
+[paste relevant code changes]
+
+Let's work on the auth system next."</pre>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                Share implemented changes
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                State next objective
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Decision Changes -->
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-medium mb-4 flex items-center">
+                            <i class="fas fa-code-branch text-purple-600 mr-2"></i>
+                            Communicate Direction Changes
+                        </h3>
+                        <pre class="text-sm text-gray-700 mb-4">
+"After testing, I've decided to use Devise
+instead of building custom auth. This changes
+our approach because:
+
+1. Different authentication flow
+2. Built-in security features
+3. New generator commands to use
+
+Let's adapt our plan."</pre>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                Explain decision changes
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                Highlight key differences
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Multiple Sessions -->
+            <div class="card p-8 mb-12">
+                <h2 class="text-2xl font-semibold mb-6">Resuming Work</h2>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-medium mb-4">Quick Context Refresh</h3>
+                    <pre class="text-sm text-gray-700 mb-4">
+"Continuing our work on the e-commerce app:
+
+Progress so far:
+- User auth with Devise ✓
+- Basic product model ✓
+- Shopping cart started
+
+Current task: Building the cart checkout flow
+- Using Stripe for payments
+- Need to handle shipping calculations
+- Must validate inventory
+
+Here's our cart model code:
+[paste relevant code]
+
+Let's implement the checkout process."</pre>
+                    <ul class="text-sm text-gray-600 grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            Summarize recent progress
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            Highlight current focus
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            Share relevant code state
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            Define next objectives
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Effective Practices -->
+            <div class="card p-8 mb-12">
+                <h2 class="text-2xl font-semibold mb-6">Communication Patterns</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-code text-blue-600"></i>
+                        </div>
+                        <h3 class="font-medium mb-2">Code Changes</h3>
+                        <p class="text-sm text-gray-600">
+                            Share relevant code snippets after each significant change
+                        </p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-directions text-purple-600"></i>
+                        </div>
+                        <h3 class="font-medium mb-2">Direction Updates</h3>
+                        <p class="text-sm text-gray-600">
+                            Communicate changes in approach or requirements immediately
+                        </p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-check-double text-green-600"></i>
+                        </div>
+                        <h3 class="font-medium mb-2">Progress Tracking</h3>
+                        <p class="text-sm text-gray-600">
+                            Maintain a clear picture of what's done and what's next
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pro Tips -->
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-lightbulb text-blue-500"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-blue-700 font-medium">Remember</p>
+                        <ul class="mt-2 space-y-2 text-blue-600">
+                            <li>• AI has no memory between sessions - provide key context when resuming</li>
+                            <li>• Share both successes and challenges</li>
+                            <li>• Keep code snippets focused and relevant</li>
+                            <li>• State your next goals clearly</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="../js/navigation.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Pair Programming - The Foundation</title>
+    <meta name="description" content="Understanding your role as the expert developer in AI pair programming">
+    <!-- External CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Internal CSS -->
+    <link href="../css/main.css" rel="stylesheet" />
+    <link href="../css/animations.css" rel="stylesheet" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="text-xl font-bold text-gray-800 flex items-center">
+                <i class="fas fa-robot mr-2 text-blue-600"></i>
+                <span class="gradient-text">AI Pair Programming</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <button id="prevSlide" class="nav-button">
+                    <i class="fas fa-arrow-left text-gray-600"></i>
+                </button>
+                <span id="slideCounter" class="font-medium text-gray-600 min-w-[48px] text-center">2/8</span>
+                <button id="nextSlide" class="nav-button pulse">
+                    <i class="fas fa-arrow-right text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Progress Bar -->
+        <div class="w-full h-1 bg-gray-100">
+            <div id="progressBar" class="progress-bar h-full bg-gradient-to-r from-blue-500 to-purple-500" style="width: 25%"></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 pt-28 pb-16">
+        <div class="max-w-4xl mx-auto">
+            <!-- Title Section -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4 gradient-text">
+                    The Foundation: You Are the Expert
+                </h1>
+                <p class="text-xl text-gray-600">
+                    Understanding your role as the primary decision maker in AI collaboration
+                </p>
+            </div>
+
+            <!-- Key Principles -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="card p-6">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-brain text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Domain Expertise</h3>
+                    <p class="text-gray-600 mb-4">
+                        Your understanding of the project's context, requirements, and constraints is irreplaceable. AI tools are powerful—but they are only as good as the context you provide.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Deep understanding of business requirements</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Knowledge of system architecture and constraints</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Awareness of security and compliance needs</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card p-6">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-eye text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Critical Review</h3>
+                    <p class="text-gray-600 mb-4">
+                        Always review and understand AI-generated code. You are responsible for the final quality and correctness of the implementation.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Verify code correctness and security</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Ensure adherence to best practices</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Validate performance implications</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Developer Checklist -->
+            <div class="card p-8 mb-12">
+                <h2 class="text-2xl font-semibold mb-6">Developer's AI Collaboration Checklist</h2>
+                <div class="space-y-4">
+                    <div class="flex items-start p-4 bg-gray-50 rounded-lg">
+                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-code text-green-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium mb-2">Code Review Standards</h3>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    Review for security vulnerabilities
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    Verify error handling
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    Check edge cases
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="flex items-start p-4 bg-gray-50 rounded-lg">
+                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-tasks text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium mb-2">Quality Assurance</h3>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    Test coverage
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    Performance optimization
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    Code maintainability
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Takeaway -->
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-lightbulb text-blue-500"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-blue-700 font-medium">Key Takeaway</p>
+                        <p class="text-blue-600 mt-1">
+                            AI is a powerful tool in your development toolkit, but you remain the architect and decision-maker. Your expertise guides the AI, not the other way around.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="../js/navigation.js"></script>
+</body>
+</html>

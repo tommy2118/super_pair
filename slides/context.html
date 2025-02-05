@@ -1,0 +1,194 @@
+<!doctype HTML>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Pair Programming - Building Context</title>
+    <meta name="description" content="Learn how to effectively build context for AI collaboration">
+    <!-- External CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Internal CSS -->
+    <link href="../css/main.css" rel="stylesheet" />
+    <link href="../css/animations.css" rel="stylesheet" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    yop<!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="text-xl font-bold text-gray-800 flex items-center">
+                <a href="../index.html" class="flex items-center hover:opacity-75 transition-opacity">
+                    <i class="fas fa-robot mr-2 text-blue-600"></i>
+                    <span class="gradient-text">AI Pair Programming</span>
+                </a>
+            </div>
+            <div class="flex items-center space-x-6">
+                <button id="prevSlide" class="nav-button">
+                    <i class="fas fa-arrow-left text-gray-600"></i>
+                </button>
+                <span id="slideCounter" class="font-medium text-gray-600 min-w-[48px] text-center">2/8</span>
+                <button id="nextSlide" class="nav-button pulse">
+                    <i class="fas fa-arrow-right text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Progress Bar -->
+        <div class="w-full h-1 bg-gray-100">
+            <div id="progressBar" class="progress-bar h-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 pt-28 pb-16">
+        <div class="max-w-4xl mx-auto">
+            <!-- Title Section -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4 gradient-text">
+                    Building Context: The Cornerstone
+                </h1>
+                <p class="text-xl text-gray-600">
+                    How to provide effective context for better AI collaboration
+                </p>
+            </div>
+
+            <!-- Context Components -->
+            <div class="card p-8 mb-12">
+                <h2 class="text-2xl font-semibold mb-6">Essential Context Components</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-project-diagram text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium mb-1">Project Overview</h3>
+                                <p class="text-sm text-gray-600">Purpose, goals, and current stage of development</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-code text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium mb-1">Technical Stack</h3>
+                                <p class="text-sm text-gray-600">Languages, frameworks, and tools being used</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-puzzle-piece text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium mb-1">Dependencies</h3>
+                                <p class="text-sm text-gray-600">External services, libraries, and integrations</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-shield-alt text-red-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium mb-1">Constraints</h3>
+                                <p class="text-sm text-gray-600">Performance requirements, security needs, limitations</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-history text-yellow-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium mb-1">History</h3>
+                                <p class="text-sm text-gray-600">Previous iterations, decisions, and lessons learned</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-tasks text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium mb-1">Current Task</h3>
+                                <p class="text-sm text-gray-600">Specific problem or feature being worked on</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Context Example -->
+            <div class="card p-8 mb-12">
+                <h2 class="text-2xl font-semibold mb-6">Context Example</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-red-50 p-6 rounded-lg border border-red-200">
+                        <h3 class="text-lg font-medium mb-4 flex items-center text-red-700">
+                            <i class="fas fa-times-circle mr-2"></i>
+                            Poor Context
+                        </h3>
+                        <pre class="text-sm text-gray-700 bg-white p-4 rounded border border-red-200">
+"Can you help me with my API?"</pre>
+                        <div class="mt-4 text-sm text-red-600">
+                            <p class="font-medium">Problems:</p>
+                            <ul class="list-disc list-inside mt-2">
+                                <li>No project details</li>
+                                <li>Missing tech stack</li>
+                                <li>Unclear requirements</li>
+                                <li>No specific task defined</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+                        <h3 class="text-lg font-medium mb-4 flex items-center text-green-700">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            Good Context
+                        </h3>
+                        <pre class="text-sm text-gray-700 bg-white p-4 rounded border border-green-200">
+"I'm building a REST API using Express.js (v4.17)
+for a task management system. We're using:
+- MongoDB for storage
+- JWT for authentication
+- Rate limiting needed (100 req/min)
+- GDPR compliance required
+
+Can you help design the user authentication
+middleware with these requirements?"</pre>
+                        <div class="mt-4 text-sm text-green-600">
+                            <p class="font-medium">Benefits:</p>
+                            <ul class="list-disc list-inside mt-2">
+                                <li>Clear project purpose</li>
+                                <li>Specific tech stack versions</li>
+                                <li>Defined constraints</li>
+                                <li>Focused request</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Context Tips -->
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-lightbulb text-blue-500"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-blue-700 font-medium">Pro Tips</p>
+                        <ul class="mt-2 space-y-2 text-blue-600">
+                            <li>• Start broad, then narrow down to specifics</li>
+                            <li>• Include version numbers for key dependencies</li>
+                            <li>• Mention any non-negotiable constraints upfront</li>
+                            <li>• Update context as your project evolves</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="../js/navigation.js"></script>
+</body>
+</html>
