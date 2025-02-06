@@ -7,7 +7,7 @@
     <meta name="description" content="Training guide for effective AI pair programming practices">
     <!-- External CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Internal CSS -->
     <link href="css/main.css" rel="stylesheet" />
     <link href="css/animations.css" rel="stylesheet" />
@@ -138,10 +138,10 @@
                 </div>
             </div>
 
-            <!-- Tools We'll Cover -->
+            <!-- Updated Tools We'll Cover -->
             <div class="bg-white/50 rounded-xl p-8">
                 <h2 class="text-2xl font-semibold mb-6">Tools We'll Cover</h2>
-                <div class="flex items-center justify-center space-x-8">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                     <div class="flex items-center">
                         <i class="fas fa-keyboard text-3xl text-blue-600 mr-3"></i>
                         <span class="font-medium">ChatGPT</span>
@@ -153,6 +153,59 @@
                     <div class="flex items-center">
                         <i class="fas fa-code text-3xl text-green-600 mr-3"></i>
                         <span class="font-medium">GitHub Copilot</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-terminal text-3xl text-indigo-600 mr-3"></i>
+                        <span class="font-medium">Cursor</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-keyboard text-3xl text-violet-600 mr-3"></i>
+                        <span class="font-medium">Claude in Vim</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fab fa-aws text-3xl text-orange-600 mr-3"></i>
+                        <span class="font-medium">Amazon Q</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Integration Overview -->
+            <div class="card p-8 mt-16">
+                <h2 class="text-2xl font-semibold mb-6">AI Integration Landscape</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-medium mb-4">Development Environments</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center bg-gray-50 p-3 rounded-lg">
+                                <i class="fas fa-code-branch text-blue-600 mr-3"></i>
+                                <span class="text-sm text-gray-600">IDE Integration (Cursor)</span>
+                            </div>
+                            <div class="flex items-center bg-gray-50 p-3 rounded-lg">
+                                <i class="fas fa-terminal text-purple-600 mr-3"></i>
+                                <span class="text-sm text-gray-600">Terminal-based (Vim)</span>
+                            </div>
+                            <div class="flex items-center bg-gray-50 p-3 rounded-lg">
+                                <i class="fas fa-cloud text-green-600 mr-3"></i>
+                                <span class="text-sm text-gray-600">Cloud-based (Amazon Q)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium mb-4">Collaboration Methods</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center bg-gray-50 p-3 rounded-lg">
+                                <i class="fas fa-comments text-blue-600 mr-3"></i>
+                                <span class="text-sm text-gray-600">Chat-based (ChatGPT, Claude)</span>
+                            </div>
+                            <div class="flex items-center bg-gray-50 p-3 rounded-lg">
+                                <i class="fas fa-magic text-purple-600 mr-3"></i>
+                                <span class="text-sm text-gray-600">Inline Suggestions (Copilot)</span>
+                            </div>
+                            <div class="flex items-center bg-gray-50 p-3 rounded-lg">
+                                <i class="fas fa-project-diagram text-green-600 mr-3"></i>
+                                <span class="text-sm text-gray-600">Project Context (Cursor, Amazon Q)</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
