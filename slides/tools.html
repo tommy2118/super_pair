@@ -1,221 +1,374 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Pair Programming - Tools Overview</title>
-    <meta name="description" content="Comparing AI programming tools">
-    <!-- External CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-    <!-- Internal CSS -->
-    <link href="../css/main.css" rel="stylesheet" />
-    <link href="../css/animations.css" rel="stylesheet" />
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-gray-200">
-        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <div class="text-xl font-bold text-gray-800 flex items-center">
-                <a href="../index.html" class="flex items-center hover:opacity-75 transition-opacity">
-                    <i class="fas fa-robot mr-2 text-blue-600"></i>
-                    <span class="gradient-text">AI Pair Programming</span>
-                </a>
-            </div>
-            <div class="flex items-center space-x-6">
-                <button id="prevSlide" class="nav-button">
-                    <i class="fas fa-arrow-left text-gray-600"></i>
-                </button>
-                <span id="slideCounter" class="font-medium text-gray-600 min-w-[48px] text-center">2/9</span>
-                <button id="nextSlide" class="nav-button pulse">
-                    <i class="fas fa-arrow-right text-gray-600"></i>
-                </button>
-            </div>
-        </div>
-        <!-- Progress Bar -->
-        <div class="w-full h-1 bg-gray-100">
-            <div id="progressBar" class="progress-bar h-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="container mx-auto px-6 pt-28 pb-16">
-        <div class="max-w-4xl mx-auto">
-            <!-- Title Section -->
-            <div class="text-center mb-12">
-                <h1 class="text-4xl font-bold mb-4 gradient-text">
-                    Choosing the Right Tool
-                </h1>
-                <p class="text-xl text-gray-600">
-                    Understanding the strengths and capabilities of each AI assistant
-                </p>
-            </div>
-
-            <!-- Tool Comparison -->
-            <div class="card p-8 mb-12">
-                <h2 class="text-2xl font-semibold mb-6">Tools at a Glance</h2>
-                <div class="overflow-x-auto">
-                    <table class="w-full">
-                        <thead>
-                            <tr class="border-b border-gray-200">
-                                <th class="text-left py-4 px-4 text-gray-600 w-1/4"></th>
-                                <th class="text-left py-4 px-4 text-gray-600 w-1/4">ChatGPT</th>
-                                <th class="text-left py-4 px-4 text-gray-600 w-1/4">Claude</th>
-                                <th class="text-left py-4 px-4 text-gray-600 w-1/4">GitHub Copilot</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100">
-                            <tr>
-                                <td class="py-4 px-4 font-medium">Best For</td>
-                                <td class="py-4 px-4">Code explanations, debugging, boilerplate generation</td>
-                                <td class="py-4 px-4">Complex analysis, architecture discussions, documentation</td>
-                                <td class="py-4 px-4">Real-time coding suggestions, API usage, patterns</td>
-                            </tr>
-                            <tr>
-                                <td class="py-4 px-4 font-medium">Interface</td>
-                                <td class="py-4 px-4">Chat with code blocks, projects</td>
-                                <td class="py-4 px-4">Chat with code blocks, file analysis</td>
-                                <td class="py-4 px-4">In-editor suggestions</td>
-                            </tr>
-                            <tr>
-                                <td class="py-4 px-4 font-medium">Context Handling</td>
-                                <td class="py-4 px-4">Project-based chat history</td>
-                                <td class="py-4 px-4">Multi-file analysis, longer context</td>
-                                <td class="py-4 px-4">Real-time file context</td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AI Pair Programming - Tools Overview</title>
+        <meta name="description" content="Comparing AI programming tools">
+        <!-- External CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+        <!-- Internal CSS -->
+        <link href="../css/main.css" rel="stylesheet" />
+        <link href="../css/animations.css" rel="stylesheet" />
+        <!-- Tailwind -->
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+        <!-- Navigation -->
+        <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-gray-200">
+            <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+                <div class="text-xl font-bold text-gray-800 flex items-center">
+                    <a href="../index.html" class="flex items-center hover:opacity-75 transition-opacity">
+                        <i class="fas fa-robot mr-2 text-blue-600"></i>
+                        <span class="gradient-text">AI Pair Programming</span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <button id="prevSlide" class="nav-button">
+                        <i class="fas fa-arrow-left text-gray-600"></i>
+                    </button>
+                    <span id="slideCounter" class="font-medium text-gray-600 min-w-[48px] text-center">2/9</span>
+                    <button id="nextSlide" class="nav-button pulse">
+                        <i class="fas fa-arrow-right text-gray-600"></i>
+                    </button>
                 </div>
             </div>
-
-            <!-- When to Use Each -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <!-- ChatGPT -->
-                <div class="card p-6">
-                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-keyboard text-2xl text-blue-600"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-4">ChatGPT</h3>
-                    <h4 class="font-medium text-gray-700 mb-2">Best Scenarios:</h4>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Code review and improvements</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Learning new concepts</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Quick prototypes</span>
-                        </li>
-                    </ul>
-                    <h4 class="font-medium text-gray-700 mt-4 mb-2">Limitations:</h4>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
-                            <span>May struggle with large codebases</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
-                            <span>Knowledge cutoff date</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Claude -->
-                <div class="card p-6">
-                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-brain text-2xl text-purple-600"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-4">Claude</h3>
-                    <h4 class="font-medium text-gray-700 mb-2">Best Scenarios:</h4>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Complex analysis tasks</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Multi-file projects</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Technical writing</span>
-                        </li>
-                    </ul>
-                    <h4 class="font-medium text-gray-700 mt-4 mb-2">Limitations:</h4>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
-                            <span>Interaction limited to chat</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
-                            <span>No direct code execution</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- GitHub Copilot -->
-                <div class="card p-6">
-                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-code text-2xl text-green-600"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-4">GitHub Copilot</h3>
-                    <h4 class="font-medium text-gray-700 mb-2">Best Scenarios:</h4>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Active coding sessions</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>API usage patterns</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Repetitive code tasks</span>
-                        </li>
-                    </ul>
-                    <h4 class="font-medium text-gray-700 mt-4 mb-2">Limitations:</h4>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
-                            <span>No complex discussions</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
-                            <span>Limited to code completion</span>
-                        </li>
-                    </ul>
-                </div>
+            <!-- Progress Bar -->
+            <div class="w-full h-1 bg-gray-100">
+                <div id="progressBar" class="progress-bar h-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
             </div>
+        </nav>
 
-            <!-- Using Together -->
-            <div class="card p-8">
-                <h2 class="text-2xl font-semibold mb-6">Using Tools Together</h2>
-                <div class="space-y-4">
-                    <div class="bg-blue-50 p-4 rounded-lg">
-                        <h3 class="font-medium mb-2">Common Workflow:</h3>
-                        <ol class="list-decimal list-inside space-y-2 text-gray-700">
-                            <li>Discuss architecture with Claude</li>
-                            <li>Generate boilerplate with ChatGPT</li>
-                            <li>Active coding with GitHub Copilot</li>
-                            <li>Code review with Claude or ChatGPT</li>
-                        </ol>
+        <!-- Main Content -->
+        <main class="container mx-auto px-6 pt-28 pb-16">
+            <div class="max-w-4xl mx-auto">
+                <!-- Title Section -->
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold mb-4 gradient-text">
+                        Choosing the Right Tool
+                    </h1>
+                    <p class="text-xl text-gray-600">
+                        Understanding the strengths and capabilities of each AI assistant
+                    </p>
+                </div>
+
+                <!-- Tool Comparison -->
+                <div class="card p-8 mb-12">
+                    <h2 class="text-2xl font-semibold mb-6">Tools at a Glance</h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b border-gray-200">
+                                    <th class="text-left py-4 px-4 text-gray-600 w-1/6"></th>
+                                    <th class="text-left py-4 px-4 text-gray-600 w-1/6">ChatGPT</th>
+                                    <th class="text-left py-4 px-4 text-gray-600 w-1/6">Claude</th>
+                                    <th class="text-left py-4 px-4 text-gray-600 w-1/6">GitHub Copilot</th>
+                                    <th class="text-left py-4 px-4 text-gray-600 w-1/6">Cursor</th>
+                                    <th class="text-left py-4 px-4 text-gray-600 w-1/6">Amazon Q</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100">
+                                <tr>
+                                    <td class="py-4 px-4 font-medium">Best For</td>
+                                    <td class="py-4 px-4">Code explanations, debugging, boilerplate generation</td>
+                                    <td class="py-4 px-4">Complex analysis, architecture discussions, documentation</td>
+                                    <td class="py-4 px-4">Real-time coding suggestions, API usage, patterns</td>
+                                    <td class="py-4 px-4">In-depth IDE integration, AI-powered refactoring</td>
+                                    <td class="py-4 px-4">Enterprise-level security, compliance, code reviews</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+
+                <!-- When to Use Each -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <!-- ChatGPT -->
+                    <div class="card p-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-keyboard text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-4">ChatGPT</h3>
+                        <h4 class="font-medium text-gray-700 mb-2">Best Scenarios:</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Code review and improvements</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Learning new concepts</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Quick prototypes</span>
+                            </li>
+                        </ul>
+                        <h4 class="font-medium text-gray-700 mt-4 mb-2">Limitations:</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
+                                <span>May struggle with large codebases</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
+                                <span>Knowledge cutoff date</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Claude -->
+                    <div class="card p-6">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-brain text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-4">Claude</h3>
+                        <h4 class="font-medium text-gray-700 mb-2">Best Scenarios:</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Complex analysis tasks</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Multi-file projects</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Technical writing</span>
+                            </li>
+                        </ul>
+                        <h4 class="font-medium text-gray-700 mt-4 mb-2">Limitations:</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
+                                <span>Interaction limited to chat</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
+                                <span>No direct code execution</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- GitHub Copilot -->
+                    <div class="card p-6">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-code text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-4">GitHub Copilot</h3>
+                        <h4 class="font-medium text-gray-700 mb-2">Best Scenarios:</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Active coding sessions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>API usage patterns</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Repetitive code tasks</span>
+                            </li>
+                        </ul>
+                        <h4 class="font-medium text-gray-700 mt-4 mb-2">Limitations:</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
+                                <span>No complex discussions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-2"></i>
+                                <span>Limited to code completion</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Enhanced Tool Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- Cursor Card -->
+                    <div class="card p-6">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-terminal text-2xl text-indigo-600"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-4">Cursor</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-medium text-gray-700 mb-2">Key Features:</h4>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Advanced code refactoring assistance</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>VS Code-like interface with AI enhancements</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Full project context awareness</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bg-indigo-50 p-4 rounded-lg">
+                                <h4 class="font-medium text-gray-700 mb-2">Best For:</h4>
+                                <p class="text-sm text-gray-600">Developers who want AI assistance deeply integrated into their coding workflow, especially for complex refactoring tasks.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Claude in Vim Card -->
+                    <div class="card p-6">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-terminal text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-4">Claude in Vim</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-medium text-gray-700 mb-2">Key Features:</h4>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Native Vim integration</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Command-line based AI assistance</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Keyboard-driven workflows</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h4 class="font-medium text-gray-700 mb-2">Best For:</h4>
+                                <p class="text-sm text-gray-600">Vim power users who want to leverage AI assistance without leaving their preferred editor environment.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Amazon Q Card -->
+                    <div class="card p-6">
+                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fab fa-aws text-2xl text-orange-600"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-4">Amazon Q</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-medium text-gray-700 mb-2">Key Features:</h4>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Enterprise-grade security</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>AWS service integration</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Team collaboration features</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <h4 class="font-medium text-gray-700 mb-2">Best For:</h4>
+                                <p class="text-sm text-gray-600">Enterprise teams working with AWS services who need secure, compliant AI assistance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Using Together -->
+                <div class="card p-8">
+                    <h2 class="text-2xl font-semibold mb-6">Using Tools Together</h2>
+                    <div class="space-y-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h3 class="font-medium mb-2">Common Workflow:</h3>
+                            <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                                <li>Discuss architecture with Claude</li>
+                                <li>Generate boilerplate with ChatGPT</li>
+                                <li>Active coding with GitHub Copilot</li>
+                                <li>Code review with Claude or ChatGPT</li>
+                                <li>Clean up and refactor with Cursor</li>
+                                <li>Enterprise security review with Amazon Q</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Integration Patterns -->
+                <div class="card p-8 mb-12">
+                    <h2 class="text-2xl font-semibold mb-6">Integration Patterns</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-medium">Development Workflow</h3>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <ol class="space-y-3 text-sm text-gray-600">
+                                    <li class="flex items-start">
+                                        <span class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">1</span>
+                                        <span>Use Cursor for active development and refactoring</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">2</span>
+                                        <span>Leverage Claude for complex problem-solving</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">3</span>
+                                        <span>Implement Amazon Q for team collaboration</span>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-medium">Best Practices</h3>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <ul class="space-y-3 text-sm text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Maintain consistent coding standards across tools</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Use tool-specific features for their strengths</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Regular review of AI-generated code</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool Selection Guide -->
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-lightbulb text-blue-500"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-blue-700 font-medium">Choosing the Right Tool</p>
+                            <ul class="mt-2 space-y-2 text-blue-600">
+                                <li>• Use Cursor for deep IDE integration and refactoring</li>
+                                <li>• Choose Claude in Vim for keyboard-driven workflows</li>
+                                <li>• Implement Amazon Q for enterprise security needs</li>
+                                <li>• Combine tools based on project requirements</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </main>
 
-        </div>
-    </main>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="../js/navigation.js"></script>
-</body>
+        <!-- Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="../js/navigation.js"></script>
+    </body>
 </html>
